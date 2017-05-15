@@ -5,16 +5,16 @@ var HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
     entry: [
         "react-hot-loader/patch",
-        "webpack-dev-server/client?http://0.0.0.0:3000",
+        "webpack-dev-server/client?http://0.0.0.0:8080",
         "webpack/hot/only-dev-server",
         "babel-polyfill",
         "whatwg-fetch",
-        "./src/index"
+        "./app/index"
     ],
     devServer: {
         hot: true,
         contentBase: path.resolve(__dirname, "dist"),
-        port: 3000,
+        port: 8080,
         host: "0.0.0.0",
         publicPath: "/",
         historyApiFallback: true,
@@ -34,7 +34,7 @@ module.exports = {
                 loader: "babel-loader",
                 options: {
                     presets: [
-                        ["es2015", {"modules": false}],
+                        ["es2015", { "modules": false }],
                         "stage-0",
                         "react"
                     ],
@@ -85,7 +85,7 @@ module.exports = {
     plugins: [
         new webpack.NamedModulesPlugin(),
         new webpack.HotModuleReplacementPlugin(),
-        new HtmlWebpackPlugin({ hash: false, template: "./index.hbs" }),
+        new HtmlWebpackPlugin({ hash: false, template: "./index.html" }),
         new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /nb/)
     ]
 };

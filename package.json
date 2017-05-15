@@ -4,9 +4,11 @@
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
-    "start": "webpack-dev-server --config webpack.config.js",
+     "start": "start npm run web && start npm run api",
+    "web": "webpack-dev-server --config webpack.config.js",
     "build": "rimraf ./dist && webpack --config webpack.config.production.js",
     "preview": "http-server ./dist -p 1234 -c-1",
+    "api": "node server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -60,7 +62,14 @@
     "react-dom": "^15.3.2",
     "react-router-dom": "latest",
     "rfx-core": "^1.5.3",
-    "whatwg-fetch": "^1.0.0"
+    "whatwg-fetch": "^1.0.0",
+    "helmet": "^1.3.0",
+    "loopback": "^3.0.0",
+    "loopback-boot": "^2.6.5",
+    "loopback-component-explorer": "^4.0.0",
+    "loopback-connector-mongodb": "^3.0.1",
+    "loopback-connector-mysql": "^2.4.0",
+    "cli-color": "^1.2.0"
   },
   "repository": {
     "url": "git@github.com:mhaagens/react-mobx-react-router4-boilerplate.git",

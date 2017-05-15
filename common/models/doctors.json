@@ -1,0 +1,27 @@
+{
+    "name": "Doctors",
+    "base": "PersistedModel",
+    "idInjection": true,
+    "options": {
+        "validateUpsert": true
+    },
+    "properties": {
+        "spec": "string",
+        "name": "string",
+        "working": {
+            "days": {
+                "start": "string",
+                "end": "string"
+            },
+            "hours": {
+                "start": "string",
+                "end": "string"
+            }
+        },
+        "busy": "array"      
+    },
+    "validations": [],
+    "relations": {},
+    "acls": [],
+    "methods": {}
+}
