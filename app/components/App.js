@@ -30,6 +30,7 @@ export default class App extends Component {
 			refreshToken,
 			testval
 		} = this.store.appState;
+		
 		return (
 			<div className="wrapper">
 				{/*<DevTools />*/}

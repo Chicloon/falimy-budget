@@ -1,5 +1,7 @@
 import { observable, action } from "mobx";
 import axios from "axios";
+import Api from 'helpers/api';
+
 
 export default class AppState {
   @observable authenticated;

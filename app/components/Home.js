@@ -10,6 +10,7 @@ class Home extends Component {
 
 	render() {
 		const store = this.store;
+		console.log('Home props', this.props);
 		return (
 			<div className="page home">
 				<header>

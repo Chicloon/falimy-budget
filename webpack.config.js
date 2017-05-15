@@ -11,6 +11,9 @@ module.exports = {
         "whatwg-fetch",
         "./app/index"
     ],
+    resolve: {
+        modules: ['node_modules', 'lib', 'app', 'vendor'],
+    },
     devServer: {
         hot: true,
         contentBase: path.resolve(__dirname, "dist"),
