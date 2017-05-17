@@ -9,15 +9,16 @@ module.exports = {
         "webpack/hot/only-dev-server",
         "babel-polyfill",
         "whatwg-fetch",
+        'semantic-ui-react',
         "./app/index"
     ],
     resolve: {
-        modules: ['node_modules', 'lib', 'app', 'vendor'],
+        modules: ['node_modules', 'lib', 'app', 'vendor', 'semantic-ui-react'],
     },
     devServer: {
         hot: true,
         contentBase: path.resolve(__dirname, "dist"),
-        port: 8080,
+        port: 3000,
         host: "0.0.0.0",
         publicPath: "/",
         historyApiFallback: true,

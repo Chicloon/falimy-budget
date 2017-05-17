@@ -4,9 +4,11 @@ import { inject, observer } from "mobx-react";
 import LazyRoute from "lazy-route";
 import DevTools from "mobx-react-devtools";
 
+import c from '../';
+
 // import { Home } from './Home.js';
 
-import TopBar from "./TopBar";
+// import TopBar from "./TopBar";
 
 @inject("store")
 @observer
@@ -30,38 +32,31 @@ export default class App extends Component {
 			refreshToken,
 			testval
 		} = this.store.appState;
-		
+		console.info('Layout');
 		return (
 			<div className="wrapper">
 				{/*<DevTools />*/}
-				<TopBar />
+				<c.TopBar />
 
 				<Route
 					exact
-					path="/"				
-					render={props=> (	<LazyRoute {...props} component={import("./Home")} />
-					)}
+					path="/"
+					component={c.Home} 
 				/>
 				<Route
 					exact
 					path="/posts"
-					render={props => (
-						<LazyRoute {...props} component={import("./SubPage")} />
-				)}
+                    component={c.SubPage}					
 				/>
 				<Route
 					exact
 					path="/posts/:id"
-					render={props => (
-						<LazyRoute {...props} component={import("./SubItem")} />
-				)}
+                    component={c.SubItem}
 				/>
 				<Route
 					exact
 					path="/login"
-					render={props => (
-						<LazyRoute {...props} component={import("./Login")} />
-				)}
+                    component={c.Login.Login}
 				/>
 				<footer>
 					{testval}

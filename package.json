@@ -4,12 +4,13 @@
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
-     "start": "start npm run web && start npm run api",
+    "start": "start npm run web && start npm run api",
     "web": "webpack-dev-server --config webpack.config.js",
     "build": "rimraf ./dist && webpack --config webpack.config.production.js",
     "preview": "http-server ./dist -p 1234 -c-1",
     "api": "node server/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npm run web & npm run api"
   },
   "keywords": [
     "React",
@@ -42,16 +43,23 @@
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
-    "webpack": "^2.4.1",
+    "webpack": "^2.2.1",
     "webpack-dev-server": "^2.4.5"
   },
   "dependencies": {
     "axios": "^0.15.0",
+    "cli-color": "^1.2.0",
     "css-declaration-sorter": "^2.0.0",
     "css-mqpacker": "^5.0.1",
     "faker": "^3.1.0",
+    "helmet": "^1.3.0",
     "http-server": "^0.10.0",
     "lazy-route": "^1.0.7",
+    "loopback": "^3.0.0",
+    "loopback-boot": "^2.6.5",
+    "loopback-component-explorer": "^4.0.0",
+    "loopback-connector-mongodb": "^3.0.1",
+    "loopback-connector-mysql": "^2.4.0",
     "mobx": "^2.5.2",
     "mobx-react": "^3.5.7",
     "mobx-react-devtools": "^4.2.6",
@@ -62,14 +70,9 @@
     "react-dom": "^15.3.2",
     "react-router-dom": "latest",
     "rfx-core": "^1.5.3",
-    "whatwg-fetch": "^1.0.0",
-    "helmet": "^1.3.0",
-    "loopback": "^3.0.0",
-    "loopback-boot": "^2.6.5",
-    "loopback-component-explorer": "^4.0.0",
-    "loopback-connector-mongodb": "^3.0.1",
-    "loopback-connector-mysql": "^2.4.0",
-    "cli-color": "^1.2.0"
+    "semantic-ui-css": "^2.2.10",
+    "semantic-ui-react": "^0.68.3",
+    "whatwg-fetch": "^1.0.0"
   },
   "repository": {
     "url": "git@github.com:mhaagens/react-mobx-react-router4-boilerplate.git",

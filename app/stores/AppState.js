@@ -25,6 +25,19 @@ export default class AppState {
       `https://jsonplaceholder.typicode.com${pathname}`
     );
     console.log(data);
+
+    const response = await Api.get('/Doctors');
+    const status = await response.status;
+    if (status === 200) {
+      const doctors = await response.json();
+      console.log(doctors);
+    } else {
+      console.log(status);
+    }
+
+    
+
+
     data.length > 0 ? this.setData(data) : this.setSingle(data);
   }
 
