@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 import { inject, observer } from "mobx-react";
 import { Link, withRouter } from "react-router-dom";
-import { Header } from 'semantic-ui-react';
-
-
 
 import TopNav from "./TopNav";
 import Button from "./ui/Button";
@@ -28,7 +25,6 @@ export default class TopBar extends Component {
 		return (
 			<div className="topbar">
 				<TopNav location={this.props.location} />
-				  <Header as='h1'>First Header</Header>
 				<Button
 					onClick={this.authenticate.bind(this)}
 					title={authenticated ? "Log out" : "Sign in"}

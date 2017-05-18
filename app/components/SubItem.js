@@ -15,7 +15,6 @@ export default class Subitem extends Component {
 	}
 	render() {
 		const { item } = this.store.appState;
-		console.log('item', item);
 		return (
 			<div className="page post">
 				<Link to="/posts">← Back to Posts</Link>

@@ -4,7 +4,7 @@ import { inject, observer } from "mobx-react";
 import LazyRoute from "lazy-route";
 import DevTools from "mobx-react-devtools";
 
-// import { Home } from './Home.js';
+import { Home } from './Home.js';
 
 import TopBar from "./TopBar";
 
@@ -38,7 +38,8 @@ export default class App extends Component {
 
 				<Route
 					exact
-					path="/"				
+					path="/"
+				
 					render={props=> (	<LazyRoute {...props} component={import("./Home")} />
 					)}
 				/>

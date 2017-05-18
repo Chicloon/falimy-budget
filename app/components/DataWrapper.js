@@ -15,8 +15,8 @@ export default function DataWrapper(Component) {
 			console.log('DataWrapper', this.props);
 			let pathname = this.props.match.url;
 			let id = this.props.match.id ? this.props.match.id : null;
-			this.store.fetchData(pathname, id);
-			// this.store.fetchData('/posts');
+			// this.store.fetchData(pathname, id);
+			this.store.fetchData('/posts');
 		}
 
 		componentWillUnmount() {

@@ -5,15 +5,14 @@ var HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
     entry: [
         "react-hot-loader/patch",
-        "webpack-dev-server/client?http://0.0.0.0:8080",
+        "webpack-dev-server/client?http://0.0.0.0:3000",
         "webpack/hot/only-dev-server",
         "babel-polyfill",
         "whatwg-fetch",
-        'semantic-ui-react',
         "./app/index"
     ],
     resolve: {
-        modules: ['node_modules', 'lib', 'app', 'vendor', 'semantic-ui-react'],
+        modules: ['node_modules', 'lib', 'app', 'vendor'],
     },
     devServer: {
         hot: true,
