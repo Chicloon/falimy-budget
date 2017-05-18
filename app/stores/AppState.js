@@ -21,6 +21,7 @@ export default class AppState {
   }
 
   async fetchData(pathname, id) {
+    console.log(Api);
     let { data } = await axios.get(
       `https://jsonplaceholder.typicode.com${pathname}`
     );

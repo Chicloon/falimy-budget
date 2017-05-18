@@ -2,6 +2,12 @@ import React, { Component } from "react";
 import { inject, observer } from "mobx-react";
 import { Match, Link } from "react-router-dom";
 
+
+import { Icon } from 'antd';
+import { Input } from 'antd';
+import { Button } from 'antd';
+
+
 import Protected from "./Protected";
 import DataWrapper from "./DataWrapper";
 
@@ -18,6 +24,9 @@ export default class SubPage extends Component {
 		return (
 			<div className="page posts">
 				<h1>Posts</h1>
+				  <Button type="danger">Primary</Button>
+					<Button type="primary" shape="circle" icon="download" />
+				<Input placeholder="Basic usage" />
 				<p className="subheader">
 					Posts are fetched from jsonplaceholder.typicode.com
 				</p>
