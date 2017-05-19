@@ -6,6 +6,7 @@ import DevTools from "mobx-react-devtools";
 
 import c from '../';
 
+import MainLayout from './MainLayout';
 // import { Home } from './Home.js';
 
 // import TopBar from "./TopBar";
@@ -18,7 +19,7 @@ export default class App extends Component {
 		this.store = this.props.store;
 	}
 	componentDidMount() {
-		this.authenticate();
+		// this.authenticate();
 	}
 	authenticate(e) {
 		if (e) e.preventDefault();
@@ -26,50 +27,14 @@ export default class App extends Component {
 	}
 	render() {
 		const {
-			authenticated,
-			authenticating,
-			timeToRefresh,
-			refreshToken,
-			testval
+			authenticated			
 		} = this.store.appState;
 		console.info('Layout');
 		return (
-			<div className="wrapper">
-				{/*<DevTools />*/}
-				<c.TopBar />
-
-				<Route
-					exact
-					path="/"
-					component={c.Home} 
-				/>
-				<Route
-					exact
-					path="/posts"
-                    component={c.SubPage}					
-				/>
-				<Route
-					exact
-					path="/posts/:id"
-                    component={c.SubItem}
-				/>
-				<Route
-					exact
-					path="/login"
-                    component={c.Login.Login}
-				/>
-				<footer>
-					{testval}
-					<a href="https://twitter.com/mhaagens" target="_blank">
-						@mhaagens
-					</a>
-					{" "}
-					| github:
-					{" "}
-					<a href="https://github.com/mhaagens" target="_blank">
-						mhaagens
-					</a>
-				</footer>
+			<div className="wrapper">				{/*<DevTools />*/}
+				
+				{!authenticated ? <c.Login.Login /> : <MainLayout />  }
+			
 			</div>
 		);
 	}

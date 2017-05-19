@@ -9,7 +9,7 @@ import { AppContainer } from "react-hot-loader";
 import { rehydrate, hotRehydrate } from "rfx-core";
 
 import { isProduction } from "./utils/constants";
-import App from "./components/App";
+import App from "./components/Layout";
 import stores from "./stores/stores";
 
 const store = rehydrate();

@@ -43,7 +43,8 @@ module.exports = {
                     ],
                     plugins: [
                         "transform-async-to-generator",
-                        "transform-decorators-legacy"
+                        "transform-decorators-legacy",
+                        // "import", { libraryName: "antd", style: "css" }
                     ]
                 }
             },
