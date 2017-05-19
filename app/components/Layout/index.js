@@ -4,6 +4,9 @@ import { inject, observer } from "mobx-react";
 import LazyRoute from "lazy-route";
 import DevTools from "mobx-react-devtools";
 
+import { Layout } from 'antd';
+const { Header, Footer, Sider, Content } = Layout;
+
 import c from '../';
 
 import MainLayout from './MainLayout';
@@ -27,14 +30,24 @@ export default class App extends Component {
 	}
 	render() {
 		const {
-			authenticated			
+			authenticated
 		} = this.store.appState;
 		console.info('Layout');
 		return (
-			<div className="wrapper">				{/*<DevTools />*/}
-				
-				{!authenticated ? <c.Login.Login /> : <MainLayout />  }
-			
+			<div>
+				<Layout>
+					{!authenticated ? <c.Login.Login /> :
+						<div>
+							<Header>Header</Header>
+							<Layout>
+								<Sider>Sider</Sider>
+								<Content>
+									<MainLayout />
+								</Content>
+							</Layout>
+						</div>
+					}
+				</Layout>
 			</div>
 		);
 	}

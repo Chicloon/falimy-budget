@@ -1,6 +1,6 @@
-import("./styles/main.scss");
+// import("./styles/main.scss");
 // import '../node_modules/antd/lib/style/components.less';
-import 'antd/dist/antd.less';
+// import 'antd/dist/antd.less';
 import React from "react";
 import { render } from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";
